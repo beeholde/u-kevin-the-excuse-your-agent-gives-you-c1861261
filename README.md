@@ -16,12 +16,13 @@ The script prints the character and byte counts it wrote. It needs nothing beyon
 
 ## Verification
 
-After writing, `main.py` reads `/output/entry.txt` back and raises if the
-stored bytes differ from the validated line, so a silent truncation or
-newline conversion cannot hand the judges a different entry. Verified
-locally (two runs, byte-identical): the output is 109 characters on one
-line with no trailing newline, SHA-256
-`529ec1a9eacf8c0c15963d5719f4156c3643a8f33db2e4a6aaf87a123e9b1278`,
+After writing, `main.py` reads the output file back and raises if the
+stored bytes differ from the validated line or end with a newline, so a
+silent truncation or newline conversion cannot hand the judges a
+different entry. Verified locally for v2 (two runs to a temporary
+target, byte-identical): the output is 106 characters on one line with
+no trailing newline, SHA-256
+`de78eaa684ebb753af4fddc8efb034ac7b3e51f8225cf2a299f9180b18afa7f0`,
 and `python3 -m py_compile main.py` passes.
 
 ---
